@@ -20,49 +20,103 @@ public class proyecto extends PApplet {
 
 */
 
-
-PShape s;
-float rotateDog = 0;
-
 //Configuración
+
+planta planta1 = new planta(90, 100, 4);
+planta planta2 = new planta(150, 150, 3);
+planta planta3 = new planta(50, 80, 4);
+
+planta planta4 = new planta(120, 90, 4);
+
+planta planta5 = new planta(70, 80, 4);
+planta planta6 = new planta(50, 80, 3);
+planta planta7 = new planta(50, 80, 4);
 
 //_____________________________ Mostrar perimetro
 boolean showPerimeter = true;
 boolean showPond = true;
-
+boolean showBridge = true;
 
 //________________ Definición de ventana
 public void setup() {
 	
-	s = loadShape("model.obj");
 }
+
 
 
 //_____________ Función principal de dibujado
 public void draw(){
 
+
 	//_______________________ Color de fondo
 	background(0xffB2C899);
+	//_____________________ Luces
+	//lights();
 	
 	//________________ Actualiza la cámara
 	moveCamera();
 
-	//________________ Dibuja el perímetro	
+
+
+
+
+	//________________ Dibuja el perímetro	}
+	hint(DISABLE_DEPTH_TEST);
+	//hint(ENABLE_DEPTH_SORT);
 	if(showPerimeter)
 		drawPerimeter();
-
+	//________________ Dibuja el estanque
 	if(showPond)
 		drawPond();
+	//________________ Dibuja el puente
+	if(showBridge)
+		drawBridge();
+
+	pushMatrix();
+	translate(0, perimeterSize-70, perimeterSize+30);
+	planta1.print();
+	translate(-30, 0, -15);
+	planta2.print();
+	translate(15, 0, 10);
+	planta3.print();
+	translate(0, 0, 15);
+	planta3.print();
+
+	popMatrix();
+
+
+
+
+	pushMatrix();
+	translate(perimeterSize-30, perimeterSize-70, perimeterSize-50);
+	planta4.print();
+	translate(0, 0, -15);
+	planta5.print();
+	rotateY(radians(90));
+	translate(0, 0, -15);
+	planta5.print();
+	popMatrix();
+
 	
 
-
-	
-
-	System.out.println(cameraXPos + ", " + cameraYPos + ", " + cameraZPos + "\nLooking at: " + lookAtX + ", " + lookAtY + ", " + lookAtZ);
+	//System.out.println(cameraXPos + ", " + cameraYPos + ", " + cameraZPos + "\nLooking at: " + lookAtX + ", " + lookAtY + ", " + lookAtZ);
 
 }
 
 
+
+class Punto3D{
+
+	public float x, y, z;
+
+	Punto3D(float x, float y, float z){
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+
+
+}
 /*
 	Configuración de cámara
 
@@ -70,13 +124,19 @@ public void draw(){
 
 
 //________________________ Variables globales iniciales
-float cameraXPos = 150;
-float cameraYPos = 150;
-float cameraZPos = 900;
+//float cameraXPos = 146;
+//float cameraYPos = 134;
+//float cameraZPos = 624;
 
 float lookAtX = 0;
 float lookAtY = 0;
 float lookAtZ = 0;
+
+//______________________ camara auxiliar
+float cameraXPos = 50;
+float cameraYPos = 200;
+float cameraZPos = 500;
+
 
 float speed = 2;
 
@@ -120,7 +180,7 @@ public void moveCamera(){
 	lookAtZ = cameraZPos - 100;
 
 }
-float profundidadEstanque = 100;
+float profundidadEstanque = 80;
 
 public void drawPond(){
 	
@@ -129,10 +189,168 @@ public void drawPond(){
 	pushMatrix();
 		translate(0, perimeterSize, 0);
 		rotateX(radians(90));
-		rect(0, 0, perimeterSize, perimeterSize*2);
+		//rect(0, 0, perimeterSize, perimeterSize*2);
 		translate(0,0, profundidadEstanque);
 		rect(0, 0, perimeterSize, perimeterSize*2);
 	popMatrix();
+
+
+
+}
+ enum colorHojas{ 	Color1, Color2, Color3, Color4, Color5; }
+ enum Tipo{     Tipo1, Tipo2, Tipo3, Tipo4; }
+
+
+
+class hoja{
+	
+	colorHojas colorhoja;
+	float altura;
+	float maxX;
+	float minYp1;
+	float minYp2;
+
+	float thickness; 
+
+	ArrayList<Punto3D> puntos = new ArrayList<Punto3D>();
+
+
+	hoja(Tipo tipo, float altura){
+
+		
+		thickness = PApplet.parseInt(random(1, 3));
+		
+		//____________________________________ Asignando el color aleatorio de las hojas
+		int aux = PApplet.parseInt(random(1, 6));
+
+
+		if (aux == 1){
+			this.colorhoja = colorHojas.Color1;
+		}
+		if (aux == 2) {
+			this.colorhoja = colorHojas.Color2;
+		}
+		if (aux == 3) {
+			this.colorhoja = colorHojas.Color3;
+		}
+		if (aux == 4) {
+			this.colorhoja = colorHojas.Color4;
+		}
+		if (aux == 5) {
+			this.colorhoja = colorHojas.Color5;
+		}
+
+		if(tipo == Tipo.Tipo1){
+			//__________________ Altura
+			this.altura = altura - random(0, altura/7); //Rango de crecimiento
+			
+			maxX = 10;
+			minYp1 = altura/3;
+			minYp2 = 2*(altura/3);
+
+			generarHoja();
+		}
+
+		if(tipo == Tipo.Tipo2){	
+
+			this.altura = 3*(altura/4) - random(0, altura/7);
+			
+			maxX = 20;
+
+			minYp2 = 2*this.altura/3 - random(0, altura/4);
+			minYp1 = altura/3 - random(0, altura/10);
+
+			generarHoja();
+
+			
+		}
+
+		if(tipo == Tipo.Tipo3){
+			this.altura = (altura/2) - random(0, altura/7);
+			
+			maxX = 25;
+
+			minYp2 = this.altura - random(0, altura/4);
+			minYp1 = altura/3;
+
+			generarHoja();
+
+		}
+
+		if(tipo == Tipo.Tipo4){
+
+			this.altura = (altura/4) - random(0, altura/7);
+			
+			maxX = 10;
+
+			minYp2 = this.altura - random(0, altura/4);
+			minYp1 = altura/4;
+
+			generarHoja();
+
+		}
+
+	}
+
+	public void generarHoja(){
+
+		//____________________________________ Generando la hoja en base a 
+		//____________________________________ sus valores predefinidos por el tipo
+
+		float yp2 = -random(minYp2, - altura);
+		float yp1 = -random(minYp1, yp2);
+		float xp3 = random(0, maxX);
+		float xp2 =	random(0, xp3);
+		float xp1 =	random(0, xp2);
+
+		float compZ = random(-maxX, maxX); // Añadir componente en z para profundidad
+
+		float aux = random(-2, 2);
+		if (aux>0) {
+			aux=1;
+		}else {
+			aux=-1;
+		}
+
+
+		puntos.add(new Punto3D(0, 0, 0));
+		puntos.add(new Punto3D(aux*xp1, yp1, 0));
+		puntos.add(new Punto3D(aux*xp2, yp2, 0));
+		puntos.add(new Punto3D(aux*xp3, -altura, compZ));
+	}
+
+	public void print(){
+		strokeWeight(thickness);
+
+		if (this.colorhoja == colorHojas.Color1){
+			stroke(61, 82, 55);
+		} 
+
+		if (this.colorhoja == colorHojas.Color2){
+			stroke(181, 195, 109);
+		} 
+		if (this.colorhoja == colorHojas.Color3){
+			stroke(110, 138, 111);
+		} 
+		if (this.colorhoja == colorHojas.Color4){
+			stroke(98, 118, 48);
+		} 
+		if (this.colorhoja == colorHojas.Color5) {
+			stroke(31, 65, 13);
+		}
+
+		bezier(puntos.get(0).x, puntos.get(0).y, puntos.get(0).z, 
+			   puntos.get(1).x, puntos.get(1).y, puntos.get(1).z,
+			   puntos.get(2).x, puntos.get(2).y, puntos.get(2).z,
+			   puntos.get(3).x, puntos.get(3).y, puntos.get(3).z);
+		
+
+
+
+		strokeWeight(1);
+	}
+
+
 
 
 
@@ -249,6 +467,194 @@ public void drawPerimeter(){
 		
 
 }	
+/*
+
+		Clase que gestiona las hojas de una planta
+
+*/
+
+class planta{
+
+	int numHojas;
+	float altura;
+	int maxTipo;
+
+
+	ArrayList<hoja> Hojas = new ArrayList<hoja>();
+
+	planta(float altura, int numHojas, int tipo){
+		this.maxTipo=tipo;
+		this.altura = altura;
+		this.numHojas = numHojas;
+		generarHojas();
+
+	}
+
+	planta(float altura, int numHojas){
+		this.altura = altura;
+		this.numHojas = numHojas;
+		this.maxTipo = 4;
+		generarHojas();
+	}
+
+	public void generarHojas(){
+
+		for (int i = 0; i < numHojas; ++i) {
+
+			float aux = PApplet.parseInt(random(1, maxTipo+1));
+				
+			
+			if (aux == 1) {
+				
+				Hojas.add(new hoja(Tipo.Tipo1, altura));
+			}
+
+			if (aux == 2) {
+				
+				Hojas.add(new hoja(Tipo.Tipo2, altura));
+
+			}
+			if (aux == 3) {
+
+				Hojas.add(new hoja(Tipo.Tipo3, altura));
+			
+			}
+			if (aux == 4) {
+
+				Hojas.add(new hoja(Tipo.Tipo4, altura));
+			
+			}
+		}
+
+
+
+	}
+
+	public void print(){
+
+		for (int i = 0; i < numHojas; ++i) {
+			hoja aux = Hojas.get(i);
+			pushMatrix();
+			aux.print();
+			popMatrix();
+		}
+	}
+
+
+
+}
+Punto3D color1Planta1 = new Punto3D(61, 82, 55);
+Punto3D color2Planta1 = new Punto3D(181, 195, 109);
+Punto3D color3Planta1 = new Punto3D(110, 138, 111);
+Punto3D color4Planta1 = new Punto3D(98, 118, 48);
+Punto3D color5Planta1 = new Punto3D(31, 65, 13);
+
+float planta1Altura = 70;
+
+public void drawPlant1(){
+
+	stroke(color3Planta1.x, color3Planta1.y, color3Planta1.z);
+	strokeWeight(5);
+
+
+	Punto3D punto1 = new Punto3D(0, 0, 0);
+	Punto3D PControl = new Punto3D(0, 0, 0);
+	Punto3D PControl2 = new Punto3D(0, 0,0);
+	Punto3D punto4 = new Punto3D(0, -planta1Altura, 0);
+
+
+
+	bezier(punto1.x, punto1.y, punto1.z, 
+				PControl.x, PControl.y, PControl.z,
+				 PControl2.x, PControl2.y, PControl2.z,
+				  punto4.x, punto4.y, punto4.z);	
+
+
+	strokeWeight(1);
+
+}
+public void drawBridge(){
+
+	noFill();
+	//______________ Grosor de linea de puente
+	strokeWeight(9);
+
+	stroke(219, 237, 226);
+
+	float alturaPuente = 55;
+	float anchuraPuente = 35;
+
+	//______________________________________________________________________________ Configuración de puntos
+	Punto3D inicioPuente = new Punto3D(-50, perimeterSize/2+50, perimeterSize);
+	Punto3D finPuente = new Punto3D(perimeterSize+50, perimeterSize/2+50, perimeterSize);
+	Punto3D PControl = new Punto3D(0, 120, perimeterSize);
+	Punto3D PControl2 = new Punto3D(perimeterSize, 120, perimeterSize);
+
+	pushMatrix();
+
+	for (int i = 0; i < 2; ++i) {
+		
+		pushMatrix();
+		//_______________________________________________________ Curva frontal inferior
+			bezier(inicioPuente.x, inicioPuente.y, inicioPuente.z, 
+				PControl.x, PControl.y, PControl.z,
+				 PControl2.x, PControl2.y, PControl2.z,
+				  finPuente.x, finPuente.y, finPuente.z);	
+	
+				translate(0, -alturaPuente/2, 0);
+		//________________________________________________________ Curva frontal media
+				bezier(inicioPuente.x, inicioPuente.y, inicioPuente.z, 
+					PControl.x, PControl.y, PControl.z,
+					 PControl2.x, PControl2.y, PControl2.z,
+					  finPuente.x, finPuente.y, finPuente.z);
+				translate(0, -alturaPuente/2, 0);
+		//_______________________________________________________ Curva frontal superior
+				bezier(inicioPuente.x, inicioPuente.y, inicioPuente.z, 
+					PControl.x, PControl.y, PControl.z,
+					 PControl2.x, PControl2.y, PControl2.z,
+					  finPuente.x, finPuente.y, finPuente.z);
+		popMatrix();
+		translate(0, 0, -anchuraPuente);
+	}
+
+	popMatrix();
+
+
+	//___________________________________________ Pilares
+
+	float distanceBtwPostes = 80;
+
+	pushMatrix();
+
+		for (int i = 0; i < 2; ++i) {
+			
+			line(inicioPuente.x, inicioPuente.y, inicioPuente.z, inicioPuente.x, inicioPuente.y - alturaPuente, inicioPuente.z);
+			line(inicioPuente.x+distanceBtwPostes, inicioPuente.y - 46, inicioPuente.z, inicioPuente.x+distanceBtwPostes, inicioPuente.y - alturaPuente - 46, inicioPuente.z);
+			line(inicioPuente.x+distanceBtwPostes*2, inicioPuente.y - 58, inicioPuente.z, inicioPuente.x+distanceBtwPostes*2, inicioPuente.y - alturaPuente - 58, inicioPuente.z);
+
+			line(finPuente.x-distanceBtwPostes*2, finPuente.y - 58, finPuente.z, finPuente.x-distanceBtwPostes*2, finPuente.y-alturaPuente - 58, finPuente.z);
+			line(finPuente.x-distanceBtwPostes, finPuente.y - 46, finPuente.z, finPuente.x-distanceBtwPostes, finPuente.y-alturaPuente - 46, finPuente.z);
+			line(finPuente.x, finPuente.y, finPuente.z, finPuente.x, finPuente.y-alturaPuente, finPuente.z);
+
+			translate(0, 0, -anchuraPuente);		
+		}
+
+	popMatrix();
+
+
+	pushMatrix();
+		for (int i = 0; i < anchuraPuente; ++i) {
+			bezier(inicioPuente.x, inicioPuente.y, inicioPuente.z, 
+				PControl.x, PControl.y, PControl.z,
+				 PControl2.x, PControl2.y, PControl2.z,
+				  finPuente.x, finPuente.y, finPuente.z);
+			translate(0, 0, -1);
+		}
+	popMatrix();
+
+
+	strokeWeight(1);
+}
   public void settings() { 	size(680, 680, P3D); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "proyecto" };

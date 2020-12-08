@@ -1,4 +1,4 @@
-float profundidadEstanque = 100;
+float profundidadEstanque = 80;
 
 void drawPond(){
 	
@@ -7,7 +7,7 @@ void drawPond(){
 	pushMatrix();
 		translate(0, perimeterSize, 0);
 		rotateX(radians(90));
-		rect(0, 0, perimeterSize, perimeterSize*2);
+		//rect(0, 0, perimeterSize, perimeterSize*2);
 		translate(0,0, profundidadEstanque);
 		rect(0, 0, perimeterSize, perimeterSize*2);
 	popMatrix();
