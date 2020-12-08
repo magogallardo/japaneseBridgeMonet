@@ -5,9 +5,9 @@
 
 
 //________________________ Variables globales iniciales
-float cameraXPos = width/2;
-float cameraYPos = height/2;
-float cameraZPos = width/2;
+float cameraXPos = 150;
+float cameraYPos = 150;
+float cameraZPos = 900;
 
 float lookAtX = 0;
 float lookAtY = 0;
@@ -46,11 +46,8 @@ void moveCamera(){
 			cameraYPos-=speed;
 
 
-		if(key == CODED){
-			if (keyCode == SHIFT)
-				cameraYPos+=speed;
-				
-		}
+		if(key == 'c' || key == 'C')
+			cameraYPos+=speed;
 	}
 
 	lookAtX = cameraXPos + mouseX - width/2;

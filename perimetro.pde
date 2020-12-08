@@ -1,8 +1,10 @@
-//______________________ Dibuja el perímetro donde se dibujará
-void drawPerimeter(){
 
 	float sphereSize = 5;
-	float perimeterSize = 500;
+	float perimeterSize = 300;
+
+	
+//______________________ Dibuja el perímetro donde se dibujará
+void drawPerimeter(){
 
 	lights();
 	smooth();
@@ -18,7 +20,7 @@ void drawPerimeter(){
 		sphere(sphereSize);
 		translate(-perimeterSize, 0, 0);
 		sphere(sphereSize);
-		translate(0, 0, perimeterSize);
+		translate(0, 0, 2*perimeterSize);
 		sphere(sphereSize);
 		translate(perimeterSize, 0, 0);
 		sphere(sphereSize);
@@ -47,35 +49,47 @@ void drawPerimeter(){
 					line(distanceBtwLines*i, 0, 0, distanceBtwLines*i, perimeterSize, 0);
 					line(0, distanceBtwLines*i, 0, perimeterSize, distanceBtwLines*i, 0);
 				}
-				translate(0, 0, perimeterSize);	
+				translate(0, 0, 2*perimeterSize);	
 			}
 		popMatrix();
 
+			
+
+		pushMatrix();
+		for (int k = 0; k < 2; ++k) {
 		//_____________ Verde
 		stroke(0, 255, 0);
-		pushMatrix();
-			for (int j = 0; j < 2; ++j) {
-				
-				for (int i = 0; i <= linesNumber; ++i){ 
-					line(0, distanceBtwLines*i, 0, 0, distanceBtwLines*i, perimeterSize);
-					line(0, 0, distanceBtwLines*i, 0, perimeterSize, distanceBtwLines*i);
+			pushMatrix();
+				for (int j = 0; j < 2; ++j) {
+					
+					for (int i = 0; i <= linesNumber; ++i){ 
+						line(0, distanceBtwLines*i, 0, 0, distanceBtwLines*i, perimeterSize);
+						line(0, 0, distanceBtwLines*i, 0, perimeterSize, distanceBtwLines*i);
+					}
+					translate(perimeterSize, 0, 0);	
 				}
-				translate(perimeterSize, 0, 0);	
+			popMatrix();
+			translate(0, 0, perimeterSize);
 			}
 		popMatrix();
 
-
+		pushMatrix();
+		for (int k = 0; k < 2; ++k) {
+			
 		//_____________ Rojo
 		stroke(255, 0, 0);
-		pushMatrix();
-			for (int j = 0; j < 2; ++j) {
-				
-				for (int i = 0; i <= linesNumber; ++i){ 
-					line(distanceBtwLines*i, 0, 0, distanceBtwLines*i, 0, perimeterSize);
-					line(0, 0, distanceBtwLines*i, perimeterSize, 0, distanceBtwLines*i);
+			pushMatrix();
+				for (int j = 0; j < 2; ++j) {
+					
+					for (int i = 0; i <= linesNumber; ++i){ 
+						line(distanceBtwLines*i, 0, 0, distanceBtwLines*i, 0, perimeterSize);
+						line(0, 0, distanceBtwLines*i, perimeterSize, 0, distanceBtwLines*i);
+					}
+					translate(0, perimeterSize, 0);	
 				}
-				translate(0, perimeterSize, 0);	
-			}
+			popMatrix();
+			translate(0, 0, perimeterSize);
+		}
 		popMatrix();
 
 	popMatrix();

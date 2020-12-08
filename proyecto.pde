@@ -12,13 +12,13 @@ float rotateDog = 0;
 
 //_____________________________ Mostrar perimetro
 boolean showPerimeter = true;
-
-
+boolean showPond = true;
+boolean showBridge = true;
 
 //________________ Definición de ventana
 void setup() {
 	size(680, 680, P3D);
-	s = loadShape("13463_Australian_Cattle_Dog_v3.obj");
+	s = loadShape("model.obj");
 }
 
 
@@ -33,24 +33,14 @@ void draw(){
 
 	//________________ Dibuja el perímetro	
 	if(showPerimeter)
-	drawPerimeter();
-	//____________________DEBUGG
+		drawPerimeter();
 
-	if(keyPressed){
-
-		if (key == 'r' || key == 'R'){
-			rotateDog+=30;
-		}
-	}
+	if(showPond)
+		drawPond();
+	
 
 
-	pushMatrix();
-	//hint(DISABLE_DEPTH_TEST);
-	//hint(ENABLE_DEPTH_SORT);
-		translate(width/2, height/2, width/2);
-		rotateX(radians(rotateDog));
-		shape(s);
-	popMatrix();
+	
 
 	System.out.println(cameraXPos + ", " + cameraYPos + ", " + cameraZPos + "\nLooking at: " + lookAtX + ", " + lookAtY + ", " + lookAtZ);
 
