@@ -1,6 +1,6 @@
 
 	float sphereSize = 5;
-	float perimeterSize = 300;
+	float perimeterSize = 300;  //__________ Hasta el momento solo funciona con 300
 
 	
 //______________________ Dibuja el perímetro donde se dibujará
