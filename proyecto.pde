@@ -248,6 +248,15 @@ pushMatrix();
 
 	popMatrix();
 
+	//___________________________________ DEBUG
+	if(keyPressed){
+
+		if (key == 'e' || key == 'E'){
+			inicializarEstanque();
+		}
+
+	}
+
 
 
 
