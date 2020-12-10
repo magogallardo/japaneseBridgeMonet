@@ -74,14 +74,17 @@ planta planta49 = new planta(25,90,3);
 planta planta50 = new planta(20,90,3);
 
 //_____________________________ Mostrar perimetro
-boolean showPerimeter = true;
+boolean showPerimeter = false;
 boolean showPond = true;
 boolean showBridge = true;
 
 //________________ Definición de ventana
 void setup() {
 	size(680, 680, P3D);
+	inicializarEstanque();
 }
+
+		//TENER CUIDADO CON EL ORDEN DE DIBUJADO
 
 
 

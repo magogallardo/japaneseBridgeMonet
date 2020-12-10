@@ -90,14 +90,17 @@ planta planta49 = new planta(25,90,3);
 planta planta50 = new planta(20,90,3);
 
 //_____________________________ Mostrar perimetro
-boolean showPerimeter = true;
+boolean showPerimeter = false;
 boolean showPond = true;
 boolean showBridge = true;
 
 //________________ Definición de ventana
 public void setup() {
 	
+	inicializarEstanque();
 }
+
+		//TENER CUIDADO CON EL ORDEN DE DIBUJADO
 
 
 
@@ -139,7 +142,7 @@ public void draw(){
 	
 
 
-	//_________________________ Plantas traseras
+	//_________ Plantas traseras (/////////////// Pon aquí las plantas traseras ///)
 
 
 	pushMatrix();
@@ -245,7 +248,7 @@ pushMatrix();
 
 	
 
- //Plantas frontales
+ //Plantas frontales (//////////// PON AQUI LAS PLANTAS FRONTALES////////)
 
 //_______________________ Plantas frontales
 	pushMatrix();
@@ -374,18 +377,18 @@ class Punto3D{
 
 
 //________________________ Variables globales iniciales
-//float cameraXPos = 146;
-//float cameraYPos = 134;
-//float cameraZPos = 624;
+float cameraXPos = 146;
+float cameraYPos = 134;
+float cameraZPos = 624;
 
 float lookAtX = 0;
 float lookAtY = 0;
 float lookAtZ = 0;
 
 //______________________ camara auxiliar
-float cameraXPos = 50;
-float cameraYPos = 200;
-float cameraZPos = 500;
+//float cameraXPos = 50;
+//float cameraYPos = 200;
+//float cameraZPos = 500;
 
 
 float speed = 2;
@@ -431,18 +434,69 @@ public void moveCamera(){
 
 }
 float profundidadEstanque = 80;
+float xoff = 0.0f; 
+float increment = 0.02f;
+float[] puntosRuido;
+PImage img;
+
+public void inicializarEstanque(){
+
+	img = createImage(PApplet.parseInt(perimeterSize), PApplet.parseInt(perimeterSize*2), ARGB);
+	puntosRuido = new float[PApplet.parseInt(perimeterSize*perimeterSize*2)];
+	img.loadPixels();
+
+	for (int x = 0; x < perimeterSize; x++) {
+	    xoff += increment;   // Increment xoff 
+	    float yoff = 0.0f;   // For every xoff, start yoff at 0
+	    for (int y = 0; y < perimeterSize*2; y++) {
+	      yoff += increment; // Increment yoff
+	      float bright = noise(xoff, yoff) * 255;
+		
+	      puntosRuido[PApplet.parseInt(x+y*perimeterSize)] = bright;
+	  	  img.pixels[PApplet.parseInt(x+y*perimeterSize)] = color(75, 132, 54, bright); 
+	    }
+	  }
+
+	img.updatePixels();
+
+}
+
 
 public void drawPond(){
 	
 	fill(0, 166, 181);
+	
 
 	pushMatrix();
+		rotateY(radians(-90));
+		rect(0, perimeterSize - profundidadEstanque, perimeterSize*2, profundidadEstanque);
+
+		translate(0, 0, -perimeterSize);
+		
+		rect(0, perimeterSize - profundidadEstanque, perimeterSize*2, profundidadEstanque);
+	popMatrix();
+	
+	pushMatrix();
+
+		rect(0, perimeterSize - profundidadEstanque, perimeterSize, profundidadEstanque);
 		translate(0, perimeterSize, 0);
 		rotateX(radians(90));
-		//rect(0, 0, perimeterSize, perimeterSize*2);
-		translate(0,0, profundidadEstanque);
 		rect(0, 0, perimeterSize, perimeterSize*2);
+		translate(0,0, profundidadEstanque);
+		//rect(0, 0, perimeterSize, perimeterSize*2);
+		image(img,0,0);
+		//for (int x = 0; x < perimeterSize; x++){
+		//	for (int y = 0; y < perimeterSize*2; y++){
+		//		stroke(puntosRuido[int(x+y*perimeterSize)]);
+      	//		point(x,y);
+      	//	}
+		//}
+
+
+
 	popMatrix();
+
+
 
 
 

@@ -5,18 +5,18 @@
 
 
 //________________________ Variables globales iniciales
-//float cameraXPos = 146;
-//float cameraYPos = 134;
-//float cameraZPos = 624;
+float cameraXPos = 146;
+float cameraYPos = 134;
+float cameraZPos = 624;
 
 float lookAtX = 0;
 float lookAtY = 0;
 float lookAtZ = 0;
 
 //______________________ camara auxiliar
-float cameraXPos = 50;
-float cameraYPos = 200;
-float cameraZPos = 500;
+//float cameraXPos = 50;
+//float cameraYPos = 200;
+//float cameraZPos = 500;
 
 
 float speed = 2;
