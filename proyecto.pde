@@ -123,7 +123,7 @@ void draw(){
 	
 
 
-	//_________________________ Plantas traseras
+	//_________ Plantas traseras (/////////////// Pon aquí las plantas traseras ///)
 
 
 	pushMatrix();
@@ -229,7 +229,7 @@ pushMatrix();
 
 	
 
- //Plantas frontales
+ //Plantas frontales (//////////// PON AQUI LAS PLANTAS FRONTALES////////)
 
 //_______________________ Plantas frontales
 	pushMatrix();
