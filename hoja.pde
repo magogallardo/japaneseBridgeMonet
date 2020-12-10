@@ -1,5 +1,15 @@
- enum colorHojas{ 	Color1, Color2, Color3, Color4, Color5; }
- enum Tipo{     Tipo1, Tipo2, Tipo3, Tipo4; }
+/*
+
+		Clase que gestiona los parámetros de la creacion
+		de una Hojas
+
+*/
+
+
+
+
+enum colorHojas{ 	Color1, Color2, Color3, Color4, Color5; }
+enum Tipo{     Tipo1, Tipo2, Tipo3, Tipo4; }
 
 
 
@@ -122,6 +132,8 @@ class hoja{
 
 	void print(){
 		strokeWeight(thickness);
+		noFill();
+
 
 		if (this.colorhoja == colorHojas.Color1){
 			stroke(61, 82, 55);
