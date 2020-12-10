@@ -139,13 +139,6 @@ void draw(){
 	popMatrix();
 
 
-	//_______________________ Puente
-	if(showBridge)
-		drawBridge();
-
-
-	
-
 //________________________________________ Plantas carito
 
   pushMatrix();
@@ -217,6 +210,24 @@ pushMatrix();
   planta30.print();
  popMatrix();
  
+	pushMatrix();
+
+		translate(perimeterSize-30, perimeterSize-70, perimeterSize-50);
+		planta4.print();
+		translate(0, 0, -15);
+		planta5.print();
+		rotateY(radians(90));
+		translate(0, 0, -15);
+		planta5.print();
+
+	popMatrix();
+
+	//_______________________ Puente
+	if(showBridge)
+		drawBridge();
+
+
+	
 
  //Plantas frontales
 
@@ -233,20 +244,6 @@ pushMatrix();
 		planta3.print();
 
 	popMatrix();
-
-	pushMatrix();
-	
-		translate(perimeterSize-30, perimeterSize-70, perimeterSize-50);
-		planta4.print();
-		translate(0, 0, -15);
-		planta5.print();
-		rotateY(radians(90));
-		translate(0, 0, -15);
-		planta5.print();
-
-	popMatrix();
-
-
 
 
 
