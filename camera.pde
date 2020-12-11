@@ -14,9 +14,9 @@ float lookAtY = 0;
 float lookAtZ = 0;
 
 //______________________ camara auxiliar
-//float cameraXPos = 50;
-//float cameraYPos = 200;
-//float cameraZPos = 500;
+//float cameraXPos = 0;
+//float cameraYPos = -30;
+//float cameraZPos = 80;
 
 
 float speed = 2;
