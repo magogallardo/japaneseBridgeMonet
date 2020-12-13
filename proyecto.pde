@@ -42,14 +42,14 @@ planta planta23 = new planta(100,80,4);
 
 planta planta24 = new planta(80,90,3);
 
-//____________ Nenufar prueba
-nenufar nuevo = new nenufar(1, 2);
+//____________ Ramal prueba
+ramal nueva = new ramal(250, 200);
 
 //_____________________________ Mostrar perimetro
-boolean showPerimeter = false;
-boolean showPond = true;
+boolean showPerimeter = true;
+boolean showPond = false;
 boolean showBridge = true;
-boolean showPlantas = true;
+boolean showPlantas = false;
 
 //________________ Definición de ventana
 void setup() {
@@ -73,8 +73,7 @@ void draw(){
 	moveCamera();
 
 	pushMatrix();
-	rotateX(radians(90));
-	nuevo.print();
+	nueva.print();
 	popMatrix();
 
 	//________________ Dibuja el estanque
