@@ -58,14 +58,17 @@ planta planta23 = new planta(100,80,4);
 
 planta planta24 = new planta(80,90,3);
 
-//____________ Ramal prueba
-ramal nueva = new ramal(250, 200);
+ramal ramal1 = new ramal(250, 150);
+
+
+
 
 //_____________________________ Mostrar perimetro
 boolean showPerimeter = true;
 boolean showPond = false;
 boolean showBridge = true;
-boolean showPlantas = false;
+boolean showPlantas = true;
+boolean showArboles = true;
 
 //________________ Definición de ventana
 public void setup() {
@@ -88,10 +91,6 @@ public void draw(){
 	//________________ Actualiza la cámara
 	moveCamera();
 
-	pushMatrix();
-	nueva.print();
-	popMatrix();
-
 	//________________ Dibuja el estanque
 	if(showPond)
 		drawPond();
@@ -106,10 +105,21 @@ public void draw(){
 								 // que tu computadora explote
 
 
+	if (showArboles == true) {
+		
+		pushMatrix();
+		translate(50, 0, 0);
+		ramal1.print();
+		popMatrix();
 
 
 
-	//________________ Dibuja el puente
+
+
+
+	}
+
+
 	if(showPerimeter)
 		drawPerimeter();
 	
@@ -615,18 +625,18 @@ class Punto3D{
 
 
 //________________________ Variables globales iniciales
-//float cameraXPos = 146;
-//float cameraYPos = 134;
-//float cameraZPos = 624;
+float cameraXPos = 146;
+float cameraYPos = 134;
+float cameraZPos = 624;
 
 float lookAtX = 0;
 float lookAtY = 0;
 float lookAtZ = 0;
 
 //______________________ camara auxiliar
-float cameraXPos = 0;
-float cameraYPos = -30;
-float cameraZPos = 150;
+//float cameraXPos = 0;
+//float cameraYPos = -30;
+//float cameraZPos = 150;
 
 
 float speed = 2;
@@ -1533,20 +1543,20 @@ class rama{
 
 
 		if (this.colorhoja == colorHojas.Color1){
-			stroke(61, 82, 55);
+			stroke(8, 45, 15);
 		} 
 
 		if (this.colorhoja == colorHojas.Color2){
-			stroke(181, 195, 109);
+			stroke(46, 85, 68);
 		} 
 		if (this.colorhoja == colorHojas.Color3){
-			stroke(110, 138, 111);
+			stroke(114, 158, 98);
 		} 
 		if (this.colorhoja == colorHojas.Color4){
-			stroke(98, 118, 48);
+			stroke(40, 67, 28);
 		} 
 		if (this.colorhoja == colorHojas.Color5) {
-			stroke(31, 65, 13);
+			stroke(45, 87, 43);
 		}
 
 		pushMatrix();

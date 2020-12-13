@@ -42,14 +42,17 @@ planta planta23 = new planta(100,80,4);
 
 planta planta24 = new planta(80,90,3);
 
-//____________ Ramal prueba
-ramal nueva = new ramal(250, 200);
+ramal ramal1 = new ramal(250, 150);
+
+
+
 
 //_____________________________ Mostrar perimetro
 boolean showPerimeter = true;
 boolean showPond = false;
 boolean showBridge = true;
-boolean showPlantas = false;
+boolean showPlantas = true;
+boolean showArboles = true;
 
 //________________ Definición de ventana
 void setup() {
@@ -72,10 +75,6 @@ void draw(){
 	//________________ Actualiza la cámara
 	moveCamera();
 
-	pushMatrix();
-	nueva.print();
-	popMatrix();
-
 	//________________ Dibuja el estanque
 	if(showPond)
 		drawPond();
@@ -90,10 +89,21 @@ void draw(){
 								 // que tu computadora explote
 
 
+	if (showArboles == true) {
+		
+		pushMatrix();
+		translate(50, 0, 0);
+		ramal1.print();
+		popMatrix();
 
 
 
-	//________________ Dibuja el puente
+
+
+
+	}
+
+
 	if(showPerimeter)
 		drawPerimeter();
 	

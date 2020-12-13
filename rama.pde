@@ -128,20 +128,20 @@ class rama{
 
 
 		if (this.colorhoja == colorHojas.Color1){
-			stroke(61, 82, 55);
+			stroke(8, 45, 15);
 		} 
 
 		if (this.colorhoja == colorHojas.Color2){
-			stroke(181, 195, 109);
+			stroke(46, 85, 68);
 		} 
 		if (this.colorhoja == colorHojas.Color3){
-			stroke(110, 138, 111);
+			stroke(114, 158, 98);
 		} 
 		if (this.colorhoja == colorHojas.Color4){
-			stroke(98, 118, 48);
+			stroke(40, 67, 28);
 		} 
 		if (this.colorhoja == colorHojas.Color5) {
-			stroke(31, 65, 13);
+			stroke(45, 87, 43);
 		}
 
 		pushMatrix();
