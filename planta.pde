@@ -4,7 +4,7 @@
 
 */
 
-class planta{
+class planta extends objeto {
 
 	int numHojas;
 	float altura;

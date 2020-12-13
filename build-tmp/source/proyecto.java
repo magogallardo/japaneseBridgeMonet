@@ -59,15 +59,18 @@ planta planta23 = new planta(100,80,4);
 planta planta24 = new planta(80,90,3);
 
 ramal ramal1 = new ramal(250, 150);
+ramal ramal2 = new ramal(100, 150);
+ramal ramal3 = new ramal(150, 150);
+
 
 
 
 
 //_____________________________ Mostrar perimetro
-boolean showPerimeter = true;
-boolean showPond = false;
+boolean showPerimeter = false;
+boolean showPond = true;
 boolean showBridge = true;
-boolean showPlantas = true;
+boolean showPlantas = false;
 boolean showArboles = true;
 
 //________________ Definición de ventana
@@ -84,7 +87,7 @@ public void draw(){
 
 
 	//_______________________ Color de fondo
-	background(0xff6D8082);
+	background(0xff071507);
 	//_____________________ Luces
 	//lights();
 	
@@ -108,9 +111,24 @@ public void draw(){
 	if (showArboles == true) {
 		
 		pushMatrix();
-		translate(50, 0, 0);
-		ramal1.print();
+
+			translate(50, 0, 70);
+			ramal1.print();
+			translate(-50, 20, 70);
+			ramal2.print();
+			translate(25, 0, -30);
+			ramal3.print();
+			translate(0, -50, 50);
+			ramal3.print();
+			translate(0, -50, 50);
+			ramal3.print();
+			translate(-25, 0, 0);
+			ramal2.print();
+			translate(-25, 0, 0);
+			ramal3.print();
+		
 		popMatrix();
+
 
 
 
@@ -580,7 +598,54 @@ public void draw(){
 			inicializarEstanque();
 		}
 
+		if (key == 'r' || key == 'R'){
+			if (showPond) {
+				showPond = false;
+			}else{
+				showPond = true;
+			}
+			delay(100);
+		}
+
+		if (key == 't' || key == 'T'){
+			if (showPlantas) {
+				showPlantas = false;
+			}else{
+				showPlantas = true;
+			}
+			delay(100);
+		}
+
+		if (key == 'y' || key == 'Y'){
+			if (showBridge) {
+				showBridge = false;
+			}else{
+				showBridge = true;
+			}
+			delay(100);
+		}
+
+
+		if (key == 'u' || key == 'U'){
+			if (showPerimeter) {
+				showPerimeter = false;
+			}else{
+				showPerimeter = true;
+			}
+			delay(100);
+		}
+
+		if (key == 'i' || key == 'I'){
+			if (showArboles) {
+				showArboles = false;
+			}else{
+				showArboles = true;
+			}
+			delay(100);
+		}
+
 	}
+
 
 
 
@@ -1127,6 +1192,24 @@ class nenufar{
 
 
 }
+class objeto{
+
+	ArrayList<Punto3D> boundingBox = new ArrayList<Punto3D>();
+	Punto3D position = new Punto3D(0,0,0);
+
+
+	objeto(){
+
+	}
+
+	public void showBoundingBox(){
+
+	}
+
+
+
+
+}
 
 	float sphereSize = 5;
 	float perimeterSize = 300;  //__________ Hasta el momento solo funciona con 300
@@ -1231,7 +1314,7 @@ public void drawPerimeter(){
 
 */
 
-class planta{
+class planta extends objeto {
 
 	int numHojas;
 	float altura;
@@ -1582,7 +1665,7 @@ class rama{
 
 */
 
-class ramal{
+class ramal extends objeto{
 
 	int numRamas;
 	float altura;
