@@ -58,9 +58,9 @@ planta planta23 = new planta(100,80,4);
 
 planta planta24 = new planta(80,90,3);
 
-ramal ramal1 = new ramal(250, 150);
-ramal ramal2 = new ramal(100, 150);
-ramal ramal3 = new ramal(150, 150);
+ramal ramal1 = new ramal(250, 50);
+ramal ramal2 = new ramal(100, 50);
+ramal ramal3 = new ramal(150, 50);
 
 
 
@@ -94,11 +94,11 @@ public void draw(){
 	//________________ Actualiza la cámara
 	moveCamera();
 
-	//________________ Dibuja el estanque
-	if(showPond)
-		drawPond();
+	
 
 	//________________ Dibuja el perímetro	
+		if(showPerimeter)
+		drawPerimeter();
 
 	//_________________________ Comandos para profundidad del sketch
 
@@ -108,26 +108,218 @@ public void draw(){
 								 // que tu computadora explote
 
 
+
+
 	if (showArboles == true) {
 		
-		pushMatrix();
+pushMatrix();
 
-			translate(50, 0, 70);
-			ramal1.print();
-			translate(-50, 20, 70);
-			ramal2.print();
-			translate(25, 0, -30);
-			ramal3.print();
-			translate(0, -50, 50);
-			ramal3.print();
-			translate(0, -50, 50);
-			ramal3.print();
-			translate(-25, 0, 0);
-			ramal2.print();
-			translate(-25, 0, 0);
-			ramal3.print();
-		
-		popMatrix();
+      translate(50, 0, 70);
+      ramal1.print();
+      //resetMatrix();
+      translate(20,20,0);
+      ramal1.print();
+      translate(20,10,0);
+      ramal1.print();
+      translate(20,-20,0);
+      ramal1.print();
+      translate(-80,40,0);
+      ramal1.print();
+      translate(-20,20,0);
+      ramal1.print();
+      translate(10,20,0);
+      ramal1.print();
+      translate(-30,-50,0);
+      ramal1.print();
+      translate(10,-60,0);
+      ramal1.print();
+      translate(20,-20,0);
+      ramal1.print();
+      translate(20,-5,0);
+      ramal1.print();
+      translate(10,30,0);
+      ramal1.print();
+      translate(10,-20,0);
+      ramal1.print();
+      translate(10,15,0);
+      ramal1.print();
+      translate(10,-10,0);
+      ramal1.print();
+      translate(10,-5,0);
+      ramal1.print();
+      translate(-20,-5,0);
+      ramal1.print();
+      translate(-50,10,0);
+      ramal1.print();
+      translate(-50,0,0);
+      ramal1.print();
+      translate(10,-5,0);
+      ramal1.print();
+      translate(120,-5,0);
+      ramal1.print();
+      translate(120,-5,0);
+      ramal1.print();
+      translate(15,5,0);
+      ramal1.print();
+      translate(15,-10,0);
+      ramal1.print();
+      translate(15,15,0);
+      ramal1.print();
+      translate(15,-20,0);
+      ramal1.print();
+      translate(15,25,0);
+      ramal1.print();
+      translate(-75,25,0);
+      ramal1.print();
+      translate(15,0,0);
+      ramal1.print();
+      translate(15,0,0);
+      ramal1.print();
+      translate(15,0,0);
+      ramal1.print();
+      translate(15,0,0);
+      ramal1.print();
+      translate(-80,0,-25);
+      ramal1.print();
+      translate(0,0,15);
+      ramal3.print();
+      translate(0,0,10);
+      ramal3.print();
+      translate(0,0,5);
+      ramal3.print();
+      translate(0,10,5);
+      ramal3.print();
+      
+      
+
+    
+    popMatrix();
+    //cambia posicion en Y
+    pushMatrix();
+      translate(150,-40,0);
+      ramal3.print();
+      translate(50,-10,1);
+      ramal1.print();
+      translate(-25,70,1);
+      ramal1.print();
+      translate(-160,-25,1);
+      ramal1.print();
+    popMatrix();
+//Las de hasta arriba 
+    pushMatrix();
+
+      translate(50, 0, 70);
+      ramal1.print();
+      translate(-50, 20, 70);
+      ramal2.print();
+      translate(25, 0, -30);
+      ramal3.print();
+      translate(0, -50, 50);
+      ramal3.print();
+      translate(0, -50, 50);
+      ramal3.print();
+      translate(-25, 0, 0);
+      ramal2.print();
+      translate(-25, 0, 0);
+      ramal3.print();
+      translate(-55, 0, -40);
+      ramal1.print();
+      translate(20, 0, -40);
+      ramal3.print();
+      translate(50, 0, -40);
+      ramal3.print();
+      translate(80, 0, 80);
+      ramal3.print();
+      translate(90, 40, 20);
+      ramal3.print();
+      translate(-20, -60, -30);
+      ramal3.print();
+      translate(-10, 80, 60);
+      ramal3.print();
+      translate(40, 60, -80);
+      ramal3.print();
+      translate(-120, 20, 90);
+      ramal3.print();
+      translate(-20, -35, -5);
+      ramal3.print();
+      translate(-20, 15, -10);
+      ramal3.print();
+      translate(-20,-20, 10);
+      ramal3.print();
+      translate(-20, 45, -30);
+      ramal3.print();
+      translate(-20, -20, -30);
+      ramal3.print();
+      translate(135, 0, 0);
+      ramal3.print();
+      translate(50, 30, 0);
+      ramal3.print();
+      translate(30, -40, 0);
+      ramal3.print();
+      translate(10, -10, 0);
+      ramal3.print();
+      translate(10, 30, -10);
+      ramal3.print();
+      translate(10, 30, -10);
+      ramal3.print();
+      translate(-30, 30, -20);
+      ramal3.print();
+      translate(0, -250, 0);
+      ramal3.print();
+      translate(-20, 10, 0);
+      ramal3.print();
+      translate(-20, -15, 0);
+      ramal3.print();
+      translate(-20, 30, 0);
+      ramal3.print();
+      translate(-20, -25, 0);
+      ramal3.print();
+      translate(-20, 15, 0);
+      ramal3.print();
+      translate(-20, -20, 0);
+      ramal3.print();
+      translate(-20, 35, 0);
+      ramal3.print();
+      translate(-20, 0, 0);
+      ramal3.print();
+      translate(-20, 0, 0);
+      ramal3.print();
+      translate(200, 0, 0);
+      ramal3.print();
+      translate(20, 35, 0);
+      ramal3.print();
+      translate(20, -40, 0);
+      ramal3.print();
+      translate(20, 55, 0);
+      ramal3.print();
+      translate(20, -60, 0);
+      ramal3.print();
+      translate(20, 80, 0);
+      ramal3.print();
+      translate(20, -40, 0);
+      ramal3.print();
+      translate(20, 60, 0);
+      ramal3.print();
+      translate(20, -60, 0);
+      ramal3.print();
+      translate(0, 100, 0);
+      ramal3.print();
+      translate(-20, 0, 0);
+      ramal3.print();
+      translate(-20, 0, 0);
+      ramal3.print();
+      translate(-20, 0, 0);
+      ramal3.print();
+      translate(-20, 0, 0);
+      ramal3.print();
+      translate(-20, 0, 0);
+      ramal3.print();
+      translate(-20, 0, 0);
+      ramal3.print();
+    
+    popMatrix();
+
+    
 
 
 
@@ -138,8 +330,9 @@ public void draw(){
 	}
 
 
-	if(showPerimeter)
-		drawPerimeter();
+	//________________ Dibuja el estanque
+	if(showPond)
+		drawPond();
 	
 
 
@@ -1104,20 +1297,6 @@ class hoja{
 
 
 }
-
-class model{
-
-	boolean showBBox = false;
-
-	//ArrayList<Point3D> BoundingBox = new ArrayList<Point3D>();
-
-	model(){
-
-	}
-
-
-}
-
 class nenufar{
 
 	float flowerSize = 5;
@@ -1189,24 +1368,6 @@ class nenufar{
 
 
 	}
-
-
-}
-class objeto{
-
-	ArrayList<Punto3D> boundingBox = new ArrayList<Punto3D>();
-	Punto3D position = new Punto3D(0,0,0);
-
-
-	objeto(){
-
-	}
-
-	public void showBoundingBox(){
-
-	}
-
-
 
 
 }
@@ -1314,7 +1475,7 @@ public void drawPerimeter(){
 
 */
 
-class planta extends objeto {
+class planta {
 
 	int numHojas;
 	float altura;
@@ -1384,43 +1545,30 @@ class planta extends objeto {
 
 
 }
-Punto3D color1Planta1 = new Punto3D(61, 82, 55);
-Punto3D color2Planta1 = new Punto3D(181, 195, 109);
-Punto3D color3Planta1 = new Punto3D(110, 138, 111);
-Punto3D color4Planta1 = new Punto3D(98, 118, 48);
-Punto3D color5Planta1 = new Punto3D(31, 65, 13);
+int r = PApplet.parseInt(random(0, 255));
+int g = PApplet.parseInt(random(0, 255));
+int b = PApplet.parseInt(random(0, 255));
 
-float planta1Altura = 70;
-
-public void drawPlant1(){
-
-	stroke(color3Planta1.x, color3Planta1.y, color3Planta1.z);
-	strokeWeight(5);
-
-
-	Punto3D punto1 = new Punto3D(0, 0, 0);
-	Punto3D PControl = new Punto3D(0, 0, 0);
-	Punto3D PControl2 = new Punto3D(0, 0,0);
-	Punto3D punto4 = new Punto3D(0, -planta1Altura, 0);
-
-
-
-	bezier(punto1.x, punto1.y, punto1.z, 
-				PControl.x, PControl.y, PControl.z,
-				 PControl2.x, PControl2.y, PControl2.z,
-				  punto4.x, punto4.y, punto4.z);	
-
-
-	strokeWeight(1);
-
-}
 public void drawBridge(){
 
 	noFill();
 	//______________ Grosor de linea de puente
 	strokeWeight(9);
 
-	stroke(219, 237, 226);
+	if (r > 255) {
+		r = 0;
+	}
+
+	if (g > 255) {
+		g = 0;
+	}
+	if (b > 255) {
+		b = 0;
+	}
+
+
+
+	stroke(r++, g++, b++);
 
 	float alturaPuente = 55;
 	float anchuraPuente = 35;
@@ -1665,7 +1813,7 @@ class rama{
 
 */
 
-class ramal extends objeto{
+class ramal {
 
 	int numRamas;
 	float altura;

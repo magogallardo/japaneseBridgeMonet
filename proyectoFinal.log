@@ -1,0 +1,316 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7445) (preloaded format=pdflatex 2020.6.3)  16 DEC 2020 04:04
+entering extended mode
+**./proyectoFinal.tex
+(proyectoFinal.tex
+LaTeX2e <2018-04-01> patch level 5
+Babel <3.20> and hyphenation patterns for 0 language(s) loaded.
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+) (/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/babel/babel.st
+y
+Package: babel 2018/05/02 3.20 The Babel package
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/babel/switch.def
+File: switch.def 2018/05/02 3.20 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/arabi/bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/babel-spanish/span
+ish.ldf
+Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/babel/babel.def
+File: babel.def 2018/05/02 3.20 Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/babel/txtbabel.d
+ef)
+\bbl@dirlevel=\count89
+)
+
+Package babel Warning: No hyphenation patterns were preloaded for
+(babel)                the language `Spanish' into the format.
+(babel)                Please, configure your TeX system to add them and
+(babel)                rebuild the format. Now I will use the patterns
+(babel)                preloaded for \language=0 instead on input line 51.
+
+\l@spanish = a dialect from \language0
+\es@quottoks=\toks16
+\es@quotdepth=\count90
+Package babel Info: Making " an active character on input line 561.
+Package babel Info: Making . an active character on input line 662.
+Package babel Info: Making < an active character on input line 707.
+Package babel Info: Making > an active character on input line 707.
+))
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/amsmath/amsmath.st
+y
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/amsmath/amstext.st
+y
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen104
+))
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen105
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks18
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks19
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks20
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/graphics/graphicx.
+sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/graphics/keyval.st
+y
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/graphics/graphics.
+sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/graphics-cfg/graph
+ics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/graphics-def/pdfte
+x.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/graphics-cfg/color
+.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/amsfonts/amsfonts.
+sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/amsfonts/amssymb.s
+ty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (proyectoFinal.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+)
+\openout1 = `proyectoFinal.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/context/base/supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen115
+\scratchbox=\box28
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen116
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks24
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/oberdiek/epstopdf-
+base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/oberdiek/infware
+rr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/oberdiek/grfext.st
+y
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/oberdiek/kvdefin
+ekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/oberdiek/ltxcmds
+.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/latex/oberdiek/kvoptions
+.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/oberdiek/kvsetke
+ys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/oberdiek/etexcmd
+s.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/iftex/ifluatex.s
+ty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)))))
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/oberdiek/pdftexc
+mds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/home/emmanuelgallardomago/.miktex/texmfs/install/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+<PaletaDeColores.jpeg, id=1, 305.14pt x 702.625pt>
+File: PaletaDeColores.jpeg Graphic file (type jpg)
+<use PaletaDeColores.jpeg>
+Package pdftex.def Info: PaletaDeColores.jpeg  used on input line 43.
+(pdftex.def)             Requested size: 91.5427pt x 210.78912pt.
+ [1
+
+{/home/emmanuelgallardomago/.miktex/texmfs/data/pdftex/config/pdftex.map}]
+Overfull \hbox (17.80293pt too wide) in paragraph at lines 47--48
+[]\OT1/cmr/m/n/10.95 Al ser una representacion de la naturaleza podamos juga
+r con la aleatoriedad
+ []
+
+[2 <./PaletaDeColores.jpeg>]
+<CAP1.png, id=13, 682.55pt x 710.655pt>
+File: CAP1.png Graphic file (type png)
+<use CAP1.png>
+Package pdftex.def Info: CAP1.png  used on input line 62.
+(pdftex.def)             Requested size: 341.27417pt x 355.32663pt.
+ [3 <./CAP1.png>] (proyectoFinal.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+) ) 
+Here is how much of TeX's memory you used:
+ 3324 strings out of 494886
+ 45813 string characters out of 3177662
+ 113100 words of memory out of 3000000
+ 6910 multiletter control sequences out of 15000+200000
+ 5765 words of font info for 21 fonts, out of 3000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 47i,5n,31p,305b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+</home/emmanuelgallardomago/.miktex/texmfs/install/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb></home/emmanuelgallardomago/.miktex/texmfs/install/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb></home/emmanuelgallardomago/.miktex/texmfs/insta
+ll/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/emmanuelgallardomago/.miktex
+/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on proyectoFinal.pdf (3 pages, 186372 bytes).
+PDF statistics:
+ 32 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,10 +1,27 @@
+int r = int(random(0, 255));
+int g = int(random(0, 255));
+int b = int(random(0, 255));
+
 void drawBridge(){
 
 	noFill();
 	//______________ Grosor de linea de puente
 	strokeWeight(9);
 
-	stroke(219, 237, 226);
+	if (r > 255) {
+		r = 0;
+	}
+
+	if (g > 255) {
+		g = 0;
+	}
+	if (b > 255) {
+		b = 0;
+	}
+
+
+
+	stroke(r++, g++, b++);
 
 	float alturaPuente = 55;
 	float anchuraPuente = 35;

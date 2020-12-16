@@ -4,7 +4,7 @@
 
 */
 
-class ramal extends objeto{
+class ramal {
 
 	int numRamas;
 	float altura;
