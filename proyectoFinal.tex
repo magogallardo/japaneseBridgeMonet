@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{amsfonts}
+\usepackage{hyperref}
 \usepackage{amssymb}
 \begin{document}
 
@@ -138,7 +139,7 @@ En este proyecto se analizó una obra del reconocido pintor Claude Monet, nenúf
 			Así mismo, existen 4 colores disponibles para cada hoja, el cual es determinado por la probabilidad (.25)\\ 
 			El objeto de hoja no es más que un conjunto de puntos en 3D los cuales son almacenados en un arreglo de tamaño 4. Los cuales al imprimirse forman una \textcolor{blue}{Curva de Bezier}. Una planta tendrá tantos arreglos de tamaño 4 como hojas tenga, y estas son dibujadas con curvas de bezier, usando sus puntos extremos como puntos finales de la curva y los dos de en medio son usados para curvar la recta formada por estos dos puntos
 
-			\subsubsection{Ramal}
+		\subsubsection{\textcolor{blue}{Ramal}}
 
 			El módulo ramal es muy semejante en funcionamiento a \textcolor{blue}{planta} almacenando en su lugar objetos tipo rama y no hoja, como lo hace \textcolor{blue}{planta}
 
@@ -147,20 +148,71 @@ En este proyecto se analizó una obra del reconocido pintor Claude Monet, nenúf
 			{\tiny Tres tipos de ramal, del 1 al 3}
 			\end{center}
 
-			\subsubsection{Rama}
+		\subsubsection{\textcolor{blue}{Rama}}
 
 			Si para el modulo planta su equivalente en inverso es rama, para la clase \textcolor{blue}{hoja} el equivalente es \textcolor{red}{rama} que usa los mismos parámetros que hoja, un arreglo de puntos en 3D que forman una \textcolor{blue}{Curva de Bezier} al ser dibujadas.
 
-			\subsubsection{Puente}
-			El puente, el cual, en la obra original, representa el puente japonés que Monet tenía en su jardín de nenúfares, en esta reinterpretación fue coloreado por valores aleatorios resultando en un moderno color simulando un neón en sus respectivas variantes (verde, rojo y azul). combinando con el perímetro de color explicado más adelante
+		\subsubsection{\textcolor{blue}{Puente}}
 
+			El puente, el cual, en la obra original, representa el puente japonés que Monet tenía en su jardín de nenúfares, en esta reinterpretación fue coloreado por valores aleatorios resultando en un moderno color simulando un neón en sus respectivas variantes (verde, rojo y azul). Combinando con el perímetro de color explicado más adelante.
 
+	\subsection{Auxiliares}
 
+		\subsubsection{Camera}
+
+			Para poder movernos a través del lienzo en 3D se configuraron las teclas \textcolor{blue}{W, A, S, D} para movernos hacia adelante y hacia los lados. Mientras que las teclas \textcolor{blue}{Espacio} y \textcolor{blue}{c} para subir y bajar en el espacio.\\
+			Así como el mouse se usa para girar la cámara.
+
+		 \subsubsection{Punto3D}
+
+		 	Clase sencilla para gestionar un punto de 3 dimensiones
+
+		 \subsubsection{Punto2D}
+
+		 	Clase sencilla para gestionar un punto de 2 dimensiones
+
+		 \subsubsection{Perimetro}
+
+		 	Auxiliar que sí tiene parte gráfica, esta, además de ser auxiliar a la hora de poner los objetos en su lugar, es una rejilla decorativa generada con base a ciclos y a una distancia predeterminada.
+
+		 	\begin{center}
+		 	\includegraphics[scale=.5]{CAP10}\\
+		 	{\tiny Imagen donde se puede apreciar todos los objetos encendidos}
+		 	
+		 	\end{center}
 
 \section{Resultados}
+	
+		\subsection{Comparación:}
+		\begin{center}
+		
+		\centerline{\fbox{\includegraphics[scale=.32]{RES1} \includegraphics[scale=.22]{RES2}}}
+		Reinterpretación/Original
+		\end{center}
+
+		Si bien la representación no se intentó completamente igual, sobre todo la animación que no puede ser mostrada en una sola imagen, sí se llegó a un parecido bastante notable, al menos en proporciones y distancias. Además, claro, de una interacción del usuario con la obra a través de una imersión tridimensional que se pudo lograr con la cámara.
+
+		El código completo, así como sus commits y tiempos de elaboración se encuentra en el repositorio del administrador del proyecto:
+		\begin{center}
+		\fbox{\href{https://github.com/magogallardo/japaneseBridgeMonet}{\textcolor{blue}{\underline{Link del repositorio en GitHub}}}}
+		
+		\end{center}
+
+		\textcolor{red}{Nota:} Debido a nuestros problemas de rendimiento, se implementó una solución temporal para poder dibujar los modelos en su correspondiente sitio, con las teclas \textcolor{blue}{R, T, Y, U, I} pueden encenderse o apagarse el estanque, las plantas, el puente, el perímetro, y los árboles, respectivamente
+
+
 \section{Conclusiones}
+	\textcolor{blue}{\bf Emmanuel}.- es bastante interesante la capacidad que tiene processing para gestionar figuras. Sus funciones son bastante útiles y variadas. Hasta la fecha desconozco si existen algunas que quizá me hubieran podido facilitar ciertas acciones que yo me compliqué en implementar desde cero. He de admitir que me costó algunos desvelos el encontrar la solución a ciertos problemas que me iban surgiendo, pero, advirtiendo que el código no está depurado, también sé que puede optimizarse mucho más. Nos vimos muy limitados por los recursos técnicos de nuestras computadoras, al no tener una tarjeta de video dedicada, algunas de las funciones de profundidad como las de \textcolor{blue}{hint ENABLE DEPTH SORT } el cual nos permite tener objetos sólidos, eran imposibles de ejecutar sin causar problemas mayúsculos de rendimiento. Pese a todo esto se logró un resultado positivo.
+	
+
 \section{Bibliografía}
 
+\begin{verbatim*}
 
+1.- https://processing.org/reference/
+2.- https://es.wikipedia.org/wiki/Claude_Monet
+3.- https://rtouti.github.io/graphics/perlin-noise-algorithm
+
+\end{verbatim*}
  	
 \end{document}

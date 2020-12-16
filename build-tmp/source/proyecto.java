@@ -69,15 +69,11 @@ ramal ramal2 = new ramal(100, 50);
 ramal ramal3 = new ramal(150, 50);
 
 
-ramal ramal4 = new ramal(100, 90, 1);
-ramal ramal5 = new ramal(100, 90, 2);
-ramal ramal6 = new ramal(100, 90, 3);
-
 //_____________________________ Mostrar perimetro
 boolean showPerimeter = false;
 boolean showPond = true;
 boolean showBridge = true;
-boolean showPlantas = false;
+boolean showPlantas = true;
 boolean showArboles = true;
 
 //________________ Definición de ventana
@@ -100,20 +96,6 @@ public void draw(){
 	
 	//________________ Actualiza la cámara
 	moveCamera();
-
-	
-	//__________- Mostrando hojas para reporte
-	pushMatrix();
-	translate(0, -700, 0);
-	ramal4.print();
-	translate(80, 0, 0);
-	ramal5.print();
-	translate(80, 0, 0);
-	ramal6.print();
-	translate(50, 0, 0);
-	
-	
-	popMatrix();
 
 
 	//________________ Dibuja el perímetro	
@@ -860,10 +842,6 @@ pushMatrix();
 	}
 
 
-
-
-
-	//System.out.println(cameraXPos + ", " + cameraYPos + ", " + cameraZPos + "\nLooking at: " + lookAtX + ", " + lookAtY + ", " + lookAtZ);
 
 }
 class Punto2D{
