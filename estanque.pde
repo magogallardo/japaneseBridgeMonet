@@ -12,6 +12,8 @@ float xoff = 0.0;
 float increment = 0.02;
 float[] puntosRuido;
 
+//___________________________ Probabilidad de que un 
+//___________________________ nenufar tenga flor
 int probabilidadFlor = 20;
 
 
@@ -98,20 +100,23 @@ void inicializarEstanque(){
 
 					int flower;
 					int colorFlower = 1;
-					
+					//__________ Auxiliar para generar la flor
 					int auxGen = int(random(0, 100));
-					
+					//_____________ Si auxGen es menor que la
+					//_____________ probabilidad de flor lo genera
 					if(auxGen <= probabilidadFlor){
 						flower = 1;
+						//___________________ Y si es par, le pone el
+						//___________________ segundo color
 						if (auxGen%2 == 0) {
 							colorFlower = 2;
 						}
 					}else{
 						flower = 0;
 					}
-
-
 					
+					//_______________ Se añade un nenufar, con, o sin flor
+					//_______________ de color 1 o 2
 					nenufaresFlower.add(new Punto2D(flower, colorFlower));
 					numeroNenufares++;
 				}

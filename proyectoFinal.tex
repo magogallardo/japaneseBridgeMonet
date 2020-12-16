@@ -56,11 +56,103 @@ En este proyecto se analizó una obra del reconocido pintor Claude Monet, nenúf
 	\end{itemize}
 	\subsection{Objetos: }
 		\subsubsection{\textcolor{blue}{Estanque}}
+			
 			Se trata de un objeto tridimensional que genera un mapa de ruido aleatorio usando la función \textcolor{red}{noise()} de Processing. 
 
 			\begin{center}
 			\includegraphics[scale=.5]{CAP1}
+			{\tiny Estanque con mapa de ruido prueba 1}
 			\end{center}
+			Como se puede intuir, el mapa de ruido se genera de forma diferente cada vez que es inicializado el estanque
+			\begin{center}
+			\includegraphics[scale=.5]{CAP2}
+			{\tiny Estanque con mapa de ruido prueba 2}
+			\end{center}
+
+			Este mapa de ruido le indica al programa dónde puede guardar las posiciones de los nenúfares que serán generados y dibujados después.
+
+			Con el siguiente módulo podemos generar estos:
+
+		\subsubsection{\textcolor{blue}{Nenufar}}
+
+			Gracias al mapa de ruido generado con el módulo anterior podemos determinar la posición en que serán dibujados los nenúfares.
+
+			La posición de estos está guardada en un arreglo dinámico tipo \textcolor{blue}{ArrayList} nativo de processing
+
+			Estos, dentro de sus atributos, poseen una variable tipo \textcolor{blue}{boolean} llamada \textcolor{red}{flower} la cual, si es verdadera, este poseerá una flor, la cual puede ser de dos colores distintos.
+
+			\begin{center}
+			\includegraphics[scale = .5]{CAP4}\\
+			{\tiny Varios nenufares, algunos con flores de distintos colores}\\
+			\end{center}
+
+			Algunas variables aleatorias de estos nenúfares están definidas desde el módulo estanque, quien es el que crea el arreglo dinámico de estos.
+
+			\begin{center}
+			\includegraphics[scale=.5]{CAP5}\\
+			{\tiny Variables aleatorias definidas desde Estanque.pde}
+			\end{center}
+
+			Para determinar las variables que serán añadidas al nenufar se usó el siguiente algoritmo:
+			\begin{center}
+			\includegraphics[scale =.5]{CAP6}
+			\end{center}
+		
+		\subsubsection{\textcolor{blue}{Planta}}
+			
+			Se trata de un módulo que gestiona la manera en cómo se almacenan y dibujan ciertas hojas (pertenecientes al siguiente módulo).\\
+			Las plantas, pueden ser de 4 tipos. Siendo el primero más cerrado y el último más abierto.\\
+			Con su constructor se pueden establecer sus atributos, y la clase misma se encarga de generar una planta con base en estos.
+
+			En el siguiente ejemplo se crean 4 plantas con una altura de 100, un número de 90 hojas y un tipo que se incrementa por cada número de planta, siendo la primera, de izquiera a derecha, tipo 1 y así sucesivamente.
+
+			
+			\begin{center}
+			\includegraphics[scale =.4]{CAP7}
+			\end{center}
+			\begin{center}
+			planta nuevaPlanta = \textcolor{red}{new} \textcolor{blue}{planta(altura, numeroDeHojas, Tipo)}
+			\end{center}
+		
+		\subsubsection{\textcolor{blue}{Hoja}}
+
+			El módulo hoja fue uno de los más complejos de diseñar, sin embargo, una vez entendida la mecánica de generación dependiendo del tipo 1, fue sencillo implementar el resto.\\
+			Como explicación básica podemos resumir que:
+			\begin{itemize}
+				\item Se manda crear una planta
+				\item El constructor crea un arreglo de hojas con los parámetros definidos
+				\item Cada hoja dentro de ese arreglo se va a generar dependiendo un número aleatorio que puede estar entre el 1 (Tipo mínimo de planta) hasta el número que corresponda al tipo de planta a realizar.
+			\end{itemize}
+			Es decir: 
+			\begin{center}
+			\textcolor{blue}{El tipo de cada planta es en realidad el número máximo de tipos de hojas que tendrá dicha planta.}\\
+			{\tiny Siendo el primer tipo de hoja más larga y vertical y el tipo 4 una hoja más corta y curva.}
+			\end{center}
+			Las plantas tipo 1 tienen su número de hojas divididas entre un solo tipo (Tipo 1)\\
+			Las plantas tipo 4 tienen su número de hojas divididas entre los 4 tipos\\
+			\begin{center}
+			\includegraphics[scale=.4]{CAp8}\\
+			{\tiny 4 hojas de 4 tipos del menor al mayor}
+			\end{center}
+
+			Así mismo, existen 4 colores disponibles para cada hoja, el cual es determinado por la probabilidad (.25)\\ 
+			El objeto de hoja no es más que un conjunto de puntos en 3D los cuales son almacenados en un arreglo de tamaño 4. Los cuales al imprimirse forman una \textcolor{blue}{Curva de Bezier}. Una planta tendrá tantos arreglos de tamaño 4 como hojas tenga, y estas son dibujadas con curvas de bezier, usando sus puntos extremos como puntos finales de la curva y los dos de en medio son usados para curvar la recta formada por estos dos puntos
+
+			\subsubsection{Ramal}
+
+			El módulo ramal es muy semejante en funcionamiento a \textcolor{blue}{planta} almacenando en su lugar objetos tipo rama y no hoja, como lo hace \textcolor{blue}{planta}
+
+			\begin{center}
+			\includegraphics[scale=.4]{CAP9}\\
+			{\tiny Tres tipos de ramal, del 1 al 3}
+			\end{center}
+
+			\subsubsection{Rama}
+
+			Si para el modulo planta su equivalente en inverso es rama, para la clase \textcolor{blue}{hoja} el equivalente es \textcolor{red}{rama} que usa los mismos parámetros que hoja, un arreglo de puntos en 3D que forman una \textcolor{blue}{Curva de Bezier} al ser dibujadas.
+
+			\subsubsection{Puente}
+			El puente, el cual, en la obra original, representa el puente japonés que Monet tenía en su jardín de nenúfares, en esta reinterpretación fue coloreado por valores aleatorios resultando en un moderno color simulando un neón en sus respectivas variantes (verde, rojo y azul). combinando con el perímetro de color explicado más adelante
 
 
 

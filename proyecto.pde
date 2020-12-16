@@ -42,13 +42,20 @@ planta planta23 = new planta(100,80,4);
 
 planta planta24 = new planta(80,90,3);
 
+planta planta25 = new planta(100, 90, 1);
+planta planta26	= new planta(100, 90, 2);
+planta planta27 = new planta(100, 90, 3);
+planta planta28 = new planta(100, 90, 4);
+
+
 ramal ramal1 = new ramal(250, 50);
 ramal ramal2 = new ramal(100, 50);
 ramal ramal3 = new ramal(150, 50);
 
 
-
-
+ramal ramal4 = new ramal(100, 90, 1);
+ramal ramal5 = new ramal(100, 90, 2);
+ramal ramal6 = new ramal(100, 90, 3);
 
 //_____________________________ Mostrar perimetro
 boolean showPerimeter = false;
@@ -79,6 +86,19 @@ void draw(){
 	moveCamera();
 
 	
+	//__________- Mostrando hojas para reporte
+	pushMatrix();
+	translate(0, -700, 0);
+	ramal4.print();
+	translate(80, 0, 0);
+	ramal5.print();
+	translate(80, 0, 0);
+	ramal6.print();
+	translate(50, 0, 0);
+	
+	
+	popMatrix();
+
 
 	//________________ Dibuja el perímetro	
 		if(showPerimeter)
